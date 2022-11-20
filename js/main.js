@@ -12,7 +12,7 @@ window.addEventListener('load',function(e)
        
         e.preventDefault();
 
-        const city = document.querySelector('#city').value;
+        const city = document.querySelector('#city').value.trim();
 
         console.log(city);
 
