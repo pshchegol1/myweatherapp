@@ -1,0 +1,22 @@
+.display-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-img{
+   
+    align-content: center;
+    text-align: center;
+    width: 30%;
+    align-self: center;
+}
+
+ul li{
+    font-size: large;
+}
+
+.error
+{
+    display: none;
+}
