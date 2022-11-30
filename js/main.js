@@ -30,17 +30,17 @@ window.addEventListener('load',function(e)
         else
         {
             fetch(`https://weatherdbi.herokuapp.com/data/weather/${city}`,{
-                mode: 'cors',
-                headers: {
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Credentials':'true'
-                  }
+                mode: 'no-cors'
             })
             .then((data)=>{
                 return data.json();
             })
             .then(function(data){
 
+                if(data.status ==="503")
+                {
+                    alert("503 Service Unavailable at the moment, please check later.")
+                }
 
                 if(data["status"])
                 {
@@ -49,6 +49,8 @@ window.addEventListener('load',function(e)
                 
                     form.reset();
                 }
+
+
                
        
 
