@@ -29,9 +29,7 @@ window.addEventListener('load',function(e)
         }
         else
         {
-            fetch(`https://weatherdbi.herokuapp.com/data/weather/${city}`,{
-                mode: 'no-cors'
-            })
+            fetch(`https://weatherdbi.herokuapp.com/data/weather/${city}`)
             .then((data)=>{
                 return data.json();
             })
