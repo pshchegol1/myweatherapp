@@ -4,44 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/565394ae51.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Animate.css for weather card animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <title>🌦️ Weather App</title>
+    <title>MyWeatherApp</title>
 </head>
 <body>
 
     <div class="animated-bg"></div>
-    <div class="container mt-5 position-relative" style="z-index:2;">
-        <h1 class="display-4 text-center mb-5">
-            <i class="fa-solid fa-cloud"></i> My<span class="text-info">Weather</span>App
-        </h1>
-        <div class="error alert alert-danger" role="alert"> </div>
-        <form id="search-form">
-            <div class="form-group">
-                
-                <input type="text" id="city" class="form-control" placeholder="Enter City" required>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="brand">
+                <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+                <span>My<span class="brand-accent">Weather</span>App</span>
+            </h1>
+        </header>
+
+        <div class="error alert" role="alert" aria-live="polite"></div>
+
+        <form id="search-form" class="search-form" autocomplete="off">
+            <div class="search-wrap">
+                <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="city"
+                    class="search-input"
+                    placeholder="Search a city…"
+                    aria-label="Search city"
+                    required>
+                <button type="button" class="clear-btn" id="clear-btn" aria-label="Clear input" hidden>
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <button type="submit" class="search-submit" aria-label="Search">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
             </div>
-         <input class="btn btn-info btn-block mt-4" type="submit" value="Search">
         </form>
 
-        <div class="display-data">
-
-            <!-- <div class="card text-white bg-primary mt-4 mb-3 text-center" style="max-width: 55rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h4 class="card-title">Primary card title</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div> -->
-
+        <div class="weather-skeleton" id="skeleton" hidden>
+            <div class="skel skel-hero"></div>
+            <div class="skel-row">
+                <div class="skel skel-tile"></div>
+                <div class="skel skel-tile"></div>
+                <div class="skel skel-tile"></div>
+            </div>
+            <div class="skel-row">
+                <div class="skel skel-card"></div>
+                <div class="skel skel-card"></div>
+                <div class="skel skel-card"></div>
+            </div>
         </div>
 
+        <div class="display-data" aria-live="polite"></div>
+
+        <footer class="app-footer">
+            <span>Data: <a href="https://wttr.in" target="_blank" rel="noopener">wttr.in</a></span>
+        </footer>
     </div>
 
     <script src="./js/main.js"></script>
 </body>
 </html>
-
