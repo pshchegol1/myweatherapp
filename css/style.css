@@ -644,24 +644,6 @@ body {
 }
 
 /* =========================================================
-   Footer
-   ========================================================= */
-.app-footer {
-    text-align: center;
-    margin-top: var(--s-7);
-    font-size: var(--fs-xs);
-    color: var(--text-muted);
-}
-
-.app-footer a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--text-muted);
-}
-
-.app-footer a:hover { color: var(--accent); }
-
-/* =========================================================
    Focus & accessibility
    ========================================================= */
 :focus-visible {
